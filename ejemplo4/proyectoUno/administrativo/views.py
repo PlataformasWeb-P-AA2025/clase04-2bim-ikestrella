@@ -11,6 +11,12 @@ from administrativo.forms import *
 
 # Create your views here.
 
+def listar_numeros(request):
+    numeros = NumeroTelefonico.objects.all()
+    informacion_template = {'numeros': numeros}
+    return render(request, 'listar_numeros.html', informacion_template)
+
+
 def index(request):
     """
         Listar los registros del modelo Estudiante,
